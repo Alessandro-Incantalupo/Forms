@@ -1,0 +1,23 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Template-driven forms</h2>
+
+  <!--  if you import FormsModule, NgForm will get automatically attached to any <form> tags you have in your view. It's a form control group-->
+  <!--  ngForm is the -->
+  <form #tempVar="ngForm"
+        (ngSubmit)="onSubmit(tempVar.value)"
+        class="ui form">
+    <div class="field">
+      <label for="skuInput">SKU</label>
+      <!--      If you use ngModel without [(ngModel)]="propertyName" you create a form control. The name attribute is necessary for ngModel to register the control with the parent form-->
+      <input ngModel name="sku" id="skuInput" placeholder="SKU">
+    </div>
+
+    <div class="field">
+      <label for="surnameInp">Surname</label>
+      <input ngModel name="surname" id="surnameInp" placeholder="Rossi">
+    </div>
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>
+

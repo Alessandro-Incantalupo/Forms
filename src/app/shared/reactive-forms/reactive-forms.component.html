@@ -1,0 +1,27 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Reactive Forms</h2>
+
+  <form [formGroup]="myForm"
+        (ngSubmit)="onSubmit(myForm.value)"
+        class="ui form">
+    <div class="field">
+      <label for="skuInput">SKU</label>
+      <input formControlName="sku" id="skuInput" placeholder="SKU">
+    </div>
+
+    <div class="field">
+      <label for="surnameInp">Surname</label>
+      <input formControlName="surname" id="surnameInp" placeholder="Rossi">
+    </div>
+
+
+    <div class="field">
+      <label for="test">test</label>
+      <input [formControl]="$any (myForm).controls['test']" id="test" placeholder="test">
+    </div>
+
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>
+
